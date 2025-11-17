@@ -1,4 +1,5 @@
 <nav>
-  <a href="/">Home</a>
-  <a href="/about.html">about</a>
+  <a href="/" class="{% if page.url == '/' %}active{% endif %}">Home</a>
+  <a href="/blog.html" class="{% if page.url == '/blog.html' %}active{% endif %}">Blog</a>
+  <a href="/about.html" class="{% if page.url == '/about.html' %}active{% endif %}">About</a>
 </nav>
