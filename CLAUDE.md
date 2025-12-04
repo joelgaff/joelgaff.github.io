@@ -4,24 +4,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Jekyll-based personal blog and portfolio site for Joel Gaff, Jr. The site uses the "no-style-please" theme and is hosted on GitHub Pages at joelgaff.com.
+This is a Jekyll-based personal blog for Joel Gaff, Jr. The site uses the default **Minima** theme and is hosted on GitHub Pages at joelgaff.com.
 
 ## Architecture
 
 ### Jekyll Structure
-- **Theme**: Uses `no-style-please` gem-based theme with dark mode appearance
+- **Theme**: Uses default `minima` gem-based theme (v2.5.2)
 - **Content**: Blog posts are stored in `_posts/` with `YYYY-MM-DD-title.md` naming convention
-- **Configuration**: `_config.yml` contains site settings, theme config, and build options
-- **Navigation**: Controlled by `_data/menu.yml` which defines the site menu structure
-- **Permalinks**: Posts use `/blog/:title/` format (important for SEO - maintains Google rankings)
-- **Default Layout**: All posts automatically use the "post" layout (configured in front matter defaults)
+- **Configuration**: `_config.yml` contains minimal site settings
+- **Permalinks**: Posts use `/blog/:title/` format (custom, to preserve Google rankings)
+- **No custom layouts or includes**: Everything comes from the Minima theme
 
 ### Key Files
-- `index.html`: Simple landing page with bio and navigation links
-- `blog.html`: Main blog listing page showing all posts with excerpts (zolkos.com-inspired minimal style)
-- `about.md`: About page with contact information
-- `archive.html`: Alternative archive view of all posts
-- `_includes/head.html`: Custom HTML head includes
+- `index.markdown`: Homepage using the `home` layout (automatically lists posts)
+- `about.markdown`: About page with contact information
+- `404.html`: Custom error page
+- `_posts/`: All blog posts
+- `images/`: All blog post images
 - `_site/`: Generated static site output (excluded from git)
 
 ### Post Structure
@@ -35,7 +34,6 @@ Posts use YAML front matter with:
 
 ### Setup
 ```bash
-bundle config set --local path 'vendor/bundle'
 bundle install
 ```
 
@@ -57,16 +55,15 @@ bundle exec jekyll serve --watch
 # Jekyll automatically rebuilds when files change
 ```
 
-### Draft Posts
-```bash
-bundle exec jekyll serve --drafts
-# Include posts from _drafts/ directory
-```
-
 ## Ruby Environment
 - Ruby version: 3.3.6 (specified in `.ruby-version`)
-- Jekyll version: ~> 4.3
-- Required gems: jekyll, jekyll-feed, no-style-please, webrick
+- Jekyll version: ~> 4.4.1
+- Theme: minima ~> 2.5
+- Plugins: jekyll-feed
+
+## Bundle Configuration
+- Gems are installed to `vendor/bundle/` (use `bundle exec` for commands)
+- Gemfile.lock is excluded from git
 
 ## Content Guidelines
 
@@ -86,14 +83,12 @@ bundle exec jekyll serve --drafts
    ```
 3. Write content in Markdown below front matter
 
-### Theme Configuration
-The theme is configured in `_config.yml` under `theme_config`:
-- `appearance`: Set to "dark" (can be "light", "dark", or "auto")
-- `back_home_text`: Navigation text for home link ("..")
-- `date_format`: How dates are displayed ("%B %-d, %Y")
-- `show_description`: Whether to show site description (true)
+### Adding Images
+- Place images in `/images/` directory
+- Reference in posts: `![alt text](/images/filename.jpg)`
 
 ## Git Workflow
 - Main branch: `main`
 - Site is deployed via GitHub Pages
 - CNAME file configures custom domain (joelgaff.com)
+- `.gitignore` excludes: `_site`, `.jekyll-cache`, `.sass-cache`, `.jekyll-metadata`, `vendor`
