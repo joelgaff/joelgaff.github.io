@@ -1,0 +1,45 @@
+# Site settings
+title: joelgaff.com
+email: joel@joelgaff.com
+description: >-
+  Joel Gaff, Jr. is a software developer based in Portland, Oregon, USA.
+
+# Build settings
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://joelgaff.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Theme
+theme: no-style-please
+
+# Theme configuration
+theme_config:
+  appearance: "light"  # Options: light, dark, auto
+  back_home_text: ".."
+  date_format: "%B %-d, %Y"
+  show_description: true
+
+# Plugins
+plugins:
+  - jekyll-feed
+
+# Exclude files from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+
+# Permalink structure
+permalink: /blog/:title/
+
+# Front Matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
