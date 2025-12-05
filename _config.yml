@@ -1,16 +1,37 @@
 # Site settings
-title: joelgaff.com
-email: joel@joelgaff.com
-description: >-
-  Joel Gaff, Jr. is a software developer based in Portland, Oregon, USA.
+title: Joel Gaff, Jr.
+email: joelga@hey.com
+description:
+  Joel Gaff, Jr. is a software developer based in Portland, Oregon & Traverse City, Michigan, USA.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joelgaff.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: joelgaff
+twitter_username: joelga
+tagline: Find me on <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">Twitter</a> or shoot me an <a href="mailto:{{ site.email }}" target="_blank">email.</a>
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+
+# Pagination settings
+paginate: 10
+paginate_path: "/page:num/"
+
+# Header navigation pages
+header_pages:
+  - index.html
+  # List pages to show in navigation (empty = no nav links)
 
 # Permalink structure (custom to preserve Google rankings)
 permalink: /blog/:title/
+
+# Default layouts for posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+

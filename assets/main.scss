@@ -1,0 +1,149 @@
+---
+---
+
+@import "minima";
+
+/* Center site title on all pages */
+.site-header {
+  padding-top: 1rem;
+  border-bottom: none !important;
+}
+
+.site-header .wrapper {
+  text-align: center;
+}
+
+.site-title {
+  float: none !important;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none !important;
+}
+
+.site-title:hover {
+  text-decoration: none !important;
+}
+
+.site-title-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.site-title-text {
+  display: block;
+}
+
+.site-nav {
+  float: none !important;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+/* Center home page content */
+.home {
+  text-align: center;
+}
+
+/* Profile photo styling */
+.profile-photo {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Center post list */
+.home .post-list {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Center page heading */
+.home .page-heading {
+  text-align: center;
+}
+
+/* Pagination styling */
+.pagination {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+.pagination a,
+.pagination span {
+  padding: 0.5rem 1rem;
+  margin: 0 0.25rem;
+  text-decoration: none;
+  color: #2a7ae2;
+}
+
+.pagination a:hover {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.pagination .disabled {
+  color: #828282;
+}
+
+/* Center footer content */
+.footer-content {
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+}
+
+/* Blog post layout styling */
+.post {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  margin-bottom: 0.5rem;
+}
+
+.post-meta {
+  color: #828282;
+  font-size: 0.9rem;
+}
+
+.post-content {
+  text-align: left;
+  line-height: 1.6;
+}
+
+.post-tags {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e8e8e8;
+  text-align: center;
+}
+
+.post-tags .tag {
+  background: #f0f0f0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}

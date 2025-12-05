@@ -1,9 +1,9 @@
 ---
 title: "When it snows in Portland..."
 date: 2017-01-12
-categories: 
+categories:
   - "blog"
-tags: 
+tags:
   - "outdoors"
   - "portland"
   - "winter"
