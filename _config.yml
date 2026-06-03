@@ -7,7 +7,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joelgaff.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: joelgaff
 twitter_username: joelga
-tagline: Find me on <a href="https://twitter.com/{{ site.twitter_username }}" target="_blank">Twitter</a> or shoot me an <a href="mailto:{{ site.email }}" target="_blank">email.</a>
+tagline: Find me on <a href="https://twitter.com/joelga" target="_blank">Twitter</a>.
 
 # Build settings
 theme: minima
