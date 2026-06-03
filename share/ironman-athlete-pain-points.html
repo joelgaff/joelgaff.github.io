@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athlete Pain Points — Joel Gaff, Jr.</title>
+<style>
+  :root {
+    --dark: #1a1a2e;
+    --accent: #e63946;
+    --accent-dark: #c1121f;
+    --blue: #1d3557;
+    --light-blue: #a8dadc;
+    --pale: #f1faee;
+    --mid-gray: #6c757d;
+    --light-gray: #e9ecef;
+    --very-light: #f8f9fa;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background: var(--very-light);
+  }
+
+  /* ── Cover ── */
+  .cover {
+    background: var(--dark);
+    min-height: 100vh;
+    padding: 4rem 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: var(--accent);
+  }
+  .cover h1 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .cover .subtitle {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .cover .divider {
+    width: 100%;
+    height: 1.5px;
+    background: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+  .cover .author-name {
+    font-size: 1.05rem;
+    color: var(--light-blue);
+    margin-bottom: 0.2rem;
+  }
+  .cover .author-role {
+    font-size: 0.9rem;
+    color: var(--mid-gray);
+    margin-bottom: 3rem;
+  }
+  .cover .toc-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1.4rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding-bottom: 1.2rem;
+    text-decoration: none;
+    transition: border-color 0.2s;
+  }
+  .cover a.toc-item:hover {
+    border-bottom-color: rgba(230,57,70,0.4);
+  }
+  .cover .toc-num {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 2.2rem;
+  }
+  .cover .toc-text h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.15rem;
+  }
+  .cover .toc-text p {
+    font-size: 0.82rem;
+    color: var(--mid-gray);
+    line-height: 1.4;
+  }
+  .cover .footer {
+    margin-top: auto;
+    font-size: 0.75rem;
+    color: var(--mid-gray);
+    text-align: right;
+  }
+
+  /* ── Content ── */
+  .content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+  }
+
+  /* Section header */
+  .section-header {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 3px solid var(--accent);
+    scroll-margin-top: 3rem;
+  }
+  .section-header .section-num {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+  .section-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--dark);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Headings */
+  h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-top: 2rem;
+    margin-bottom: 0.6rem;
+  }
+  h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-top: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* Body text */
+  p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    margin-bottom: 0.85rem;
+    color: var(--dark);
+    text-align: justify;
+  }
+
+  /* Callout / blockquote */
+  blockquote {
+    border-left: 3px solid var(--accent);
+    padding: 0.8rem 1.2rem;
+    margin: 1.2rem 0;
+    background: var(--pale);
+    border-radius: 0 6px 6px 0;
+  }
+  blockquote p {
+    font-style: italic;
+    color: var(--blue);
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  /* Lists */
+  ul {
+    margin: 0.5rem 0 1rem 1.5rem;
+    list-style: none;
+  }
+  ul li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.35rem;
+    position: relative;
+    padding-left: 1rem;
+  }
+  ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.9rem;
+  }
+  thead th {
+    background: var(--blue);
+    color: #fff;
+    font-weight: 700;
+    text-align: left;
+    padding: 0.65rem 0.85rem;
+    border-bottom: 2px solid var(--accent);
+  }
+  tbody td {
+    padding: 0.6rem 0.85rem;
+    border-bottom: 1px solid var(--light-gray);
+    vertical-align: top;
+  }
+  tbody tr:nth-child(even) {
+    background: var(--pale);
+  }
+  tbody td:first-child {
+    font-weight: 600;
+  }
+
+  /* Pain point italic intro */
+  .pain-point {
+    font-style: italic;
+    color: var(--mid-gray);
+    margin-bottom: 0.6rem;
+  }
+
+  /* Horizontal rule */
+  hr {
+    border: none;
+    height: 1px;
+    background: var(--accent);
+    margin: 2.5rem 0;
+  }
+
+  /* Running header */
+  .running-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 0;
+    font-size: 0.72rem;
+    color: var(--mid-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    position: sticky;
+    top: 0;
+    background: var(--very-light);
+    z-index: 10;
+  }
+
+  @media (max-width: 600px) {
+    .cover { padding: 2.5rem 1.5rem 2rem; }
+    .cover h1 { font-size: 2.2rem; }
+    .content { padding: 0 1.2rem 3rem; }
+    .section-header h2 { font-size: 1.6rem; }
+  }
+
+  @media print {
+    .cover { min-height: auto; page-break-after: always; }
+    .section-header { page-break-before: always; }
+    .running-header { display: none; }
+    .back-to-top { display: none; }
+    body { background: #fff; }
+  }
+
+  /* Back to top */
+  .back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--dark);
+    border: 2px solid var(--accent);
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .back-to-top:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════ COVER ══════ -->
+<div class="cover">
+  <div class="cover-inner">
+  <h1>Athlete Pain Points</h1>
+  <div class="subtitle">Rethinking the Post-Race Athlete Experience</div>
+  <div class="divider"></div>
+  <div class="author-name">Joel Gaff, Jr.</div>
+  <div class="author-role">Event Technology Committee</div>
+
+  <a href="#section-01" class="toc-item">
+    <span class="toc-num">01</span>
+    <div class="toc-text">
+      <h3>The Athlete Passport</h3>
+      <p>A unified, athlete-owned record of every finish, split, photo, and certificate.</p>
+    </div>
+  </a>
+  <a href="#section-02" class="toc-item">
+    <span class="toc-num">02</span>
+    <div class="toc-text">
+      <h3>RFID Bike Checkout</h3>
+      <p>Leveraging existing timing infrastructure for secure, automated transition exit.</p>
+    </div>
+  </a>
+  <a href="#section-03" class="toc-item">
+    <span class="toc-num">03</span>
+    <div class="toc-text">
+      <h3>Video Capture Booth</h3>
+      <p>Self-service story recording with AI-powered content cataloging.</p>
+    </div>
+  </a>
+  <a href="#section-04" class="toc-item">
+    <span class="toc-num">04</span>
+    <div class="toc-text">
+      <h3>Additional Concepts</h3>
+      <p>Check-in, community, and information confidence improvements.</p>
+    </div>
+  </a>
+
+  <div class="footer">June 2026</div>
+  </div>
+</div>
+
+<!-- ══════ CONTENT ══════ -->
+<div class="content">
+  <div class="running-header">
+    <span>Athlete Pain Points</span>
+    <span>Joel Gaff, Jr. · June 2026</span>
+  </div>
+
+  <!-- ── SECTION 01 ── -->
+  <div class="section-header" id="section-01">
+    <div class="section-num">Section 01</div>
+    <h2>The Athlete Passport</h2>
+  </div>
+
+  <blockquote><p>The finish line experience is great. Everything after it is fragmented.</p></blockquote>
+
+  <p>An athlete who has completed 10 IRONMAN events has their history scattered across multiple email inboxes, three or four different photo vendors with separate logins and paywalls, the IRONMAN athlete app (which has some history but it's shallow and results-focused), Strava or Garmin Connect for performance data, a physical box of medals somewhere in their garage, and their own memory for everything else.</p>
+
+  <p>There is no single place that says <strong>"here is your complete IRONMAN story."</strong> That's a massive missed opportunity for an organization whose entire brand is built on life-changing personal achievement.</p>
+
+  <h3>Per-Race Record</h3>
+  <p>Think of the passport less like a database and more like a living document of athletic identity — closer to a passport or military service record than a results spreadsheet. Each race entry contains:</p>
+  <ul>
+    <li>Official results and all splits — not just finish time</li>
+    <li>AG placement and percentile benchmarks — contextualized performance data (top 12% on the swim, 34th percentile on the run)</li>
+    <li>Course conditions that day: water temp, air temp, wind — so a 5:12 in Kona reads differently than a 5:12 in Chattanooga</li>
+    <li>Every finisher photo, aggregated from the vendor, organized by race — not scattered across separate vendor logins</li>
+    <li>Finisher certificate — generated, downloadable, printable, never lost</li>
+    <li>The course map you actually rode and ran, overlaid with your pace data</li>
+    <li>Notable call-outs: first finish, PR, Kona qualifier</li>
+  </ul>
+
+  <h3>Career-Level View</h3>
+  <p>Across all races, the passport provides:</p>
+  <ul>
+    <li>A visual timeline from first finish to most recent</li>
+    <li>Aggregate stats: total miles swum, biked, and run; total finish time; total events</li>
+    <li>PR tracking across distances with trajectory over time</li>
+    <li>A milestone layer: 5 finishes, 10 finishes, all-continent finisher, and more</li>
+    <li>A world map showing every venue raced</li>
+    <li>Ranking amongst all athletes based on miles completed, lowest total times, and other metrics</li>
+  </ul>
+
+  <h3>The Shareability Layer</h3>
+  <p>The passport only becomes valuable if athletes use it and show it to people. That's the virality vector.</p>
+  <p>A single link — <strong>ironman.com/athlete/[name]</strong> — surfaces a public-facing profile card. Not the whole passport, but a curated highlight view: name, home city, years racing, career stats, a visual timeline of races, and the most recent finish with photo.</p>
+  <p>Athletes share this link the same way they share their Strava profile. It becomes the canonical proof of athletic identity in the triathlon community. Right now that social proof lives on Facebook or in someone's email signature. IRONMAN should own that surface.</p>
+
+  <h3>The "Athlete-Owned" Philosophy</h3>
+  <p>The data belongs to the athlete, not to IRONMAN as a platform:</p>
+  <ul>
+    <li><strong>Full data export</strong> at any time — JSON or CSV of every result, split, and photo URL</li>
+    <li><strong>Portable credential</strong> — a cryptographically verifiable finisher certificate the athlete can present anywhere</li>
+    <li><strong>API for the athlete</strong> — connect the passport to Strava, TrainingPeaks, Apple Health; results flow into training logs automatically</li>
+    <li>The athlete never loses their history because a vendor changes, a website gets redesigned, or an old email gets deleted</li>
+  </ul>
+  <p>This flips the relationship: instead of IRONMAN holding athlete data behind a login, IRONMAN becomes the <strong>trusted custodian</strong> of something the athlete genuinely treasures.</p>
+
+  <h3>The Photo Problem</h3>
+  <p>This deserves its own call-out because it's an acute pain point with a tractable solution.</p>
+  <p><strong>Currently:</strong> Athlete finishes → gets an email from FinisherPix 48 hours later → pays $30–50 for a digital download → posts it on Instagram → never looks at it again. If they want their 2019 race photos, they have to remember which vendor, find the login, and hope the photos still exist.</p>
+  <p><strong>Ideal state:</strong> IRONMAN has a photo licensing arrangement where every finish line photo is automatically linked to the athlete's passport via bib number. Photos appear inside the athlete's profile within hours of finishing. The passport <em>is</em> the photo delivery mechanism.</p>
+  <p>The monetization model shifts from pay-per-download to either passport subscription including race photos, or photos included in the entry fee as a registration cost line item. The passport itself should remain free.</p>
+
+  <h3>Connection to Other Initiatives</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Initiative</th>
+        <th>How It Feeds the Passport</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Live tracking / results transparency</td>
+        <td>Every split is already captured; flows in automatically</td>
+      </tr>
+      <tr>
+        <td>Canonical course layer (single GPX source)</td>
+        <td>Course map in the passport is accurate and interactive</td>
+      </tr>
+      <tr>
+        <td>Contextual info feed</td>
+        <td>"You PR'd this course in 2022 — here's how your training compares"</td>
+      </tr>
+      <tr>
+        <td>Social / community layer</td>
+        <td>Connect athletes with similar passport profiles: same races, similar times, same city</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>The Emotional Core</h3>
+  <p>IRONMAN athletes are among the most motivated, achievement-oriented people in recreational sport. They spend 6–12 months training for a single day. That day is enormously meaningful to them.</p>
+  <p>Right now IRONMAN hands them a medal, a hat, and a finisher photo email — and then the relationship goes mostly dormant until they register for the next race.</p>
+  <blockquote><p>The passport says: <strong>we remember what you did, we honor it, and we're keeping it for you.</strong></p></blockquote>
+  <p>That turns IRONMAN from a race company into something closer to what the Olympics means to elite athletes — an institution that is the keeper of your athletic record.</p>
+
+  <!-- ── SECTION 02 ── -->
+  <div class="section-header" id="section-02">
+    <div class="section-num">Section 02</div>
+    <h2>RFID Bike Checkout</h2>
+  </div>
+
+  <h3>The Problem Today</h3>
+  <p>Bike checkout at transition is a friction point. Volunteers manually check bib numbers against bike stickers, lines back up, and the process is vulnerable to honest mistakes (grabbing the wrong bike) and occasional theft. It's slow, labor-intensive, and not particularly secure.</p>
+
+  <h3>The Concept</h3>
+  <p>Pair two RFID tags — one on the bike, one on the athlete's wristband — so that checkout becomes a scan-and-match. Athlete approaches the exit, the system confirms the pairing, and the athlete rolls out. A mismatch triggers an alert and manual verification.</p>
+
+  <h3>How It Would Work</h3>
+  <p>The bike tag would be a passive UHF RFID sticker applied to the seat tube or top tube during bike check-in (could be part of the existing bike sticker). The athlete wristband — already used for athlete village access, meals, etc. — would get an embedded RFID inlay. Both tags get associated in the registration database: Bib 1247 → Bike Tag ID → Wristband Tag ID.</p>
+  <p>At check-in, a volunteer scans the bike tag and the wristband together, linking them. At checkout, the system scans again — if the pair matches, green light. If not, red light and manual verification.</p>
+
+  <h3>Leveraging Existing Timing Infrastructure</h3>
+  <p>We already have RFID timing checkpoints (readers and antennas) deployed across the race course. Rather than purchasing dedicated checkout scanners, we can repurpose existing timing hardware at a designated bike checkout exit. Opening a <strong>side door on transition</strong> — a dedicated bike-out lane routed through an existing timing mat or a repositioned reader — turns the checkout into a walk-through gate. The athlete rolls their bike through with their wristband on, both tags fire, the system validates the match in real time.</p>
+  <p>This eliminates the biggest hardware expense and leverages equipment already being trucked to the venue.</p>
+
+  <h3>Tags at Scale</h3>
+  <p>At IRONMAN Group volume — tens of thousands of athletes across dozens of events per year — passive UHF RFID tags become extraordinarily cheap. Bulk purchasing at mega scale (100K+ units) drives per-tag cost well below $0.10 for standard stickers and under $0.20 for on-metal variants. RFID-enabled wristband inlays at similar volume land around $0.30–0.50 per unit over standard Tyvek bands.</p>
+  <p>At full IRONMAN Group deployment across a full season, per-athlete RFID cost for the bike checkout system could be <strong>well under $1.00</strong> — negligible against registration revenue.</p>
+
+  <h3>On-Metal Considerations</h3>
+  <p>Bikes are metal, and UHF RFID doesn't love metal surfaces. On-metal RFID tags exist and work well — they're slightly more expensive but still cheap at volume. Alternatively, the tag can be placed on a non-metal surface: a zip-tied hang tag on the saddle rails, adhesive on the seat post clamp, or integrated into the existing bike number sticker on a foam standoff. Testing placement in advance is critical, but this is a solved problem in industrial RFID.</p>
+
+  <h3>Guest / Proxy Checkout</h3>
+  <p>An athlete could authorize a guest (spouse, friend, coach) by having a volunteer scan the athlete's wristband and a guest wristband together, creating a delegated checkout permission. The guest wristband would be a different color or style, and the system would log who actually picked up the bike. This cleanly solves the "my husband is still at medical, can I grab his bike?" problem — with a full audit trail.</p>
+
+  <h3>Challenges</h3>
+  <p>The main challenge is process change management — training volunteers on a new system during a race is always the hardest part. The side-door checkout lane also requires transition layout planning to create a clean flow that doesn't cross athlete traffic during the race. A pilot at a single 70.3 with a parallel manual backup lane would de-risk both concerns.</p>
+
+  <!-- ── SECTION 03 ── -->
+  <div class="section-header" id="section-03">
+    <div class="section-num">Section 03</div>
+    <h2>"Share Your Story" Video Capture Booth</h2>
+  </div>
+
+  <h3>The Opportunity</h3>
+  <p>IRONMAN already knows that athlete stories are their most powerful content. But capturing them today is expensive (film crews), inconsistent (random social media posts), and hard to catalog. Meanwhile, athletes cross the finish line bursting with emotion and have no structured outlet for it. By the time they're at the post-race party, the rawness has faded.</p>
+
+  <h3>The Concept</h3>
+  <p>A simple, self-service video booth in the athlete village — ideally near the finish area or recovery zone — where athletes enter their bib number, record a 60–90 second video, and walk away. The video is automatically tagged with their bib, name, race, and finish time. IRONMAN gets a library of authentic, emotionally charged content. Athletes get a shareable video clip delivered to their email or the IRONMAN app.</p>
+
+  <h3>The Simplest Possible Tech</h3>
+  <p>This can be built with remarkably little: an iPad on a kiosk stand, a ring light, and a simple web app. The athlete types their bib number (or taps their RFID wristband if the bike checkout system is in place), the app pulls their name and finish time, shows a prompt screen with their results, then starts recording via the browser. A countdown timer shows they have 90 seconds. When done, the video uploads to cloud storage tagged with metadata.</p>
+  <blockquote><p>No app download. No login. No QR code fumbling. Walk up, enter bib, talk, walk away.</p></blockquote>
+  <p>The physical setup: a weatherproof iPad kiosk ($300–500), a simple branded backdrop, a ring light, and a pop-up tent. Two booths handle volume well — one athlete recording while another queues up.</p>
+
+  <h3>AI-Powered Processing Pipeline</h3>
+  <p>After the race, the video library runs through an automated processing pipeline:</p>
+  <ul>
+    <li><strong>Speech-to-text</strong> transcribes each clip automatically</li>
+    <li><strong>AI analysis</strong> processes each transcript to extract structured data: sentiment, key themes (first timer, cancer survivor, did it for my dad, age group winner), quotable moments, and suggested content categories</li>
+    <li><strong>Searchable library</strong> — IRONMAN's content team can query: "show me all first-timer stories from women 40–44" or "find clips mentioning overcoming injury"</li>
+  </ul>
+  <p>This turns a pile of raw video into a tagged, searchable content library — a gold mine for social media, broadcast packages, sponsor decks, and the IRONMAN Foundation's storytelling.</p>
+
+  <h3>Athlete Value</h3>
+  <p>The athlete gets an email within 24–48 hours with a link to their video, lightly branded with an IRONMAN frame, their name, and their finish time. They share it everywhere. It's organic marketing that costs IRONMAN almost nothing per impression.</p>
+  <p>Integration into the IRONMAN app or athlete profile — "Watch your race day story" alongside results and photos — adds long-term engagement value.</p>
+
+  <h3>Volume and Cost</h3>
+  <p>At a 70.3 with 2,500 athletes, expect 300–500 recordings if the booth is well-positioned and the post-race energy is right. Hardware costs are minimal (two kiosks, lights, backdrop — well under $2,000 total). Cloud storage is negligible. Speech-to-text and AI processing costs for 500 videos would run roughly $50–100. Software development is the main investment.</p>
+
+  <h3>Booth Placement and Timing</h3>
+  <p>Position matters. The sweet spot is between the finish chute exit and the athlete food/recovery area — athletes are still buzzing but have caught their breath. Too close to the finish line and they're gasping; too far into the village and the moment has passed. A volunteer greeter directing finishers toward the booth ("want to capture your story?") would significantly boost participation.</p>
+
+  <!-- ── SECTION 04 ── -->
+  <div class="section-header" id="section-04">
+    <div class="section-num">Section 04</div>
+    <h2>Additional Concepts</h2>
+  </div>
+
+  <h3>The Unified RFID Wristband</h3>
+  <p>Both the RFID bike checkout and video capture booth share a common infrastructure element: RFID wristbands as a unified athlete identity token. If the wristband is already RFID-enabled for bike checkout, it can also serve as video booth authentication — tap your wristband instead of typing your bib. The same wristband could gate athlete village access, meals, gear bag pickup, and the story booth.</p>
+  <p>This is essentially building toward an <strong>athlete passport system</strong> — a single wearable identity that streamlines every touchpoint across race day.</p>
+
+  <h4>Venue Movement Analytics</h4>
+  <p>With RFID readers already positioned at key touchpoints — transition, athlete village entry, merchandise, food tents, the video booth, gear pickup — the wristband passively generates a movement dataset across the entire venue. This opens up a powerful analytics layer: how long do athletes spend in transition after finishing? What's the dwell time at merchandise vs. food? Which areas see congestion and when? Do athletes who visit the expo pre-race spend more at merchandise post-race?</p>
+  <p>This data is gold for venue layout optimization, sponsor activation placement, staffing decisions, and proving ROI to expo vendors. It also enables real-time crowd management on race day — if the recovery area is at capacity, redirect flow to a secondary zone. Over multiple events, the dataset reveals patterns that improve the athlete experience and create a measurable value proposition for sponsors who want to know exactly how much foot traffic their activation received.</p>
+
+  <h3>Check-in &amp; Registration Experience</h3>
+  <p class="pain-point">Long lines at athlete check-in, re-entering information that already exists, paper wristbands, mandatory gear checks that feel chaotic.</p>
+  <p>Pre-verified digital check-in. Athlete uploads a photo ID, signs forms, and arrives at a "fast lane" to tap their phone and go. Wristband is replaced by a chip and digital credential. Lines dissolve because 80% of the work happened days earlier.</p>
+
+  <h3>Athlete-to-Athlete &amp; Community Layer</h3>
+  <p class="pain-point">IRONMAN is a deeply social sport but the experience is atomized. Athletes who trained together, or who share a hometown, have no way to connect through official channels.</p>
+  <p>An opt-in social layer on the start list. See who's racing from your city, who you've raced before, Strava mutual connections. A lightweight "crew finder" for athletes who want a bike handler or travel buddy. Community that IRONMAN owns rather than ceding entirely to Facebook groups.</p>
+
+  <h3>Pre-Race Anxiety &amp; Information Confidence</h3>
+  <p class="pain-point">Athletes don't know if they have the right information. Is this year's run course the same as last year's? Did the aid station locations change? Is the athlete guide final or will there be a v2?</p>
+  <p>A versioned athlete guide with a changelog. Every update is flagged: "Updated May 14 — aid station 4 relocated, run course turn at mile 9 clarified." Athletes subscribe to change notifications. Zero ambiguity about whether what they're reading is current.</p>
+
+  <hr>
+
+  <h3>The Underlying Pattern</h3>
+  <p>The thread across all of these is <strong>one source of truth per domain, delivered contextually.</strong> Right now athletes are doing integration work that technology should do for them — cross-referencing PDFs, hunting for results, emailing timing with corrections. The ideal end state is a system that knows who you are, where you are in your race journey, and surfaces exactly what you need before you know you need it.</p>
+
+  <h3>Pilot Recommendation</h3>
+  <p>The video booth is lower-risk and higher-visibility — athletes and sponsors would love it immediately, and the content value is tangible from day one. The RFID bike checkout is more operationally impactful but benefits from controlled testing before a full race deployment.</p>
+  <p>A reasonable path: pilot the video booth at a single IRONMAN 70.3 in 2026, prototype and bench-test the RFID checkout flow, and deploy the full RFID system at a 2027 event with a parallel manual backup lane.</p>
+
+</div>
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0})" title="Return to top">↑</button>
+
+<script>
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > window.innerHeight);
+  });
+</script>
+
+</body>
+</html>
