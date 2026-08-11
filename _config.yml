@@ -7,6 +7,10 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joelgaff.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: joelgaff
 twitter_username: joelga
+image: /images/joel-og.jpg
+twitter:
+  username: joelga
+  card: summary
 tagline: Find me on <a href="https://twitter.com/joelga" target="_blank">Twitter</a>.
 
 # Build settings
@@ -27,8 +31,12 @@ header_pages:
 # Permalink structure (custom to preserve Google rankings)
 permalink: /blog/:title/
 
-# Default layouts for posts
+# Default layouts and social share image
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/joel-og.jpg
   - scope:
       path: ""
       type: "posts"
