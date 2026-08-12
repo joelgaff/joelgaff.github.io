@@ -1,7 +1,22 @@
 <footer class="site-footer h-card">
   <div class="wrapper">
     <div class="footer-content">
-      <p><a href="{{ site.url }}">joelgaff.com</a></p>
+      <p>
+        <a href="{{ site.url }}">joelgaff.com</a>
+        &middot;
+        <a id="contact-email" href="#">email me</a>
+      </p>
     </div>
   </div>
 </footer>
+<script>
+  (function () {
+    var el = document.getElementById('contact-email');
+    if (!el) return;
+    var user = 'joel';
+    var domain = 'joelgaff.com';
+    var addr = user + String.fromCharCode(64) + domain;
+    el.setAttribute('href', 'mailto:' + addr);
+    el.textContent = addr;
+  })();
+</script>
