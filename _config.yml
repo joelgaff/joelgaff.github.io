@@ -2,7 +2,7 @@
 title: Joel Gaff, Jr.
 email: joelga@hey.com
 description:
-  Joel Gaff, Jr. is a software developer based in Portland, Oregon & Traverse City, Michigan, USA.
+  Joel Gaff, Jr. is a Rails developer based in Portland, Oregon.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://joelgaff.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: joelgaff
