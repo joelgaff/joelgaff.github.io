@@ -10,7 +10,9 @@ tags:
   - "indie"
 ---
 
-Small ship. When someone signs up for cucamonga.app, my phone buzzes with a Telegram message from a dedicated bot I set up.
+Small ship. When someone signs up for cucamonga.app, my phone buzzes with a Telegram message from a dedicated bot I set up:
+
+![Telegram notification from the Cucamonga signup bot](/images/cucamonga-telegram-signup.png)
 
 It's the kind of thing that only matters to me now when the product is small. If the app takes off, I'll likely turn these notifications off. But at the moment the emotional payoff of these pings is high.
 
@@ -28,7 +30,7 @@ Under the hood: a small background job on the Rails side that fires whenever a n
 
 A few details worth naming:
 
-- The job only fires in production. Dev signups, test signups, seeded data - none of them buzz my phone. Local iteration is already noisy enough.
+- The job only fires in production. Dev signups, test signups, seeded data. None of them buzz my phone. Local iteration is already noisy enough.
 - It only fires after the database commit. If a signup gets rolled back for any reason, no ghost ping.
 - If Telegram is having a bad day, the job retries a few times, then quietly gives up and logs it. A failed notification should never block or retry a real user's signup.
 
