@@ -71,3 +71,5 @@ That revert matters. Skip it and the next network I try to join will look myster
 - iwd can silently rewrite your MAC back to the hardware one on connect if `AddressRandomization` is set. If your first clone succeeds and then the change disappears, that is why.
 
 This kind of stuff is just magical. I wouldn't feel as confident messing with my Mac, but I feel a closer connection to my Linux machine, and know my way around the CLI much more comfortably (with plenty of help from Claude). I felt like a true hacker, doing something that I wasn't technically supposed to be able to do. Big win for us nerds.
+
+Now off to explore [Quattro](https://github.com/basecamp/omarchy/releases/tag/v4.0.0).
