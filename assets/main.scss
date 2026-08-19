@@ -30,11 +30,14 @@ a { color: $brand-color; text-decoration: none;
 h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
 
 .site-header { border-top: none; border-bottom: none; min-height: auto; padding-top: 36px;
-  .wrapper { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .wrapper { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    &::after { content: none; }
+  }
 }
 .site-title, .site-title:visited { display: flex; align-items: center; float: none; line-height: 1;
   .site-mark { height: 52px; width: auto; }
 }
+.nav-toggle, .nav-burger { display: none; }
 .site-nav { float: none; line-height: 1.2; background: none; border: none; position: static;
   .page-link { color: $grey-color; font-size: 14px; font-weight: 500; margin-left: 20px; padding-bottom: 1px;
     &:hover { color: $text-color; text-decoration: none; }
@@ -128,6 +131,18 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
   .home-hero .byline img { width: 112px; height: 112px; }
   .home-hero .byline .byline-name { font-size: 22px; }
   .home-hero .byline .kicker { font-size: 13px; }
+
+  .nav-burger { display: flex; flex-direction: column; gap: 5px; padding: 8px 2px; cursor: pointer; margin-left: auto;
+    span { display: block; width: 22px; height: 2px; background: $text-color; transition: transform .2s ease, opacity .2s ease; }
+  }
+  .nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }
+  .nav-toggle:checked ~ .nav-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .site-nav { display: none; width: 100%; margin-top: 8px; }
+  .nav-toggle:checked ~ .site-nav { display: block; }
+  .site-nav .page-link { display: block; margin: 0; padding: 14px 0; font-size: 16px; text-align: right; border-top: 1px solid $grey-color-light;
+    &.active { color: $text-color; font-weight: 600; border-bottom: none; }
+  }
   .page-hero h1 { font-size: 34px; }
   .post-header .post-title { font-size: 32px; }
 }
