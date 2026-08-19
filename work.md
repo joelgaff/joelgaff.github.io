@@ -14,7 +14,7 @@ permalink: /work/
     <span class="num">01</span>
     <div>
       <h3><a href="https://podiumstats.com">podiumstats.com</a></h3>
-      <p>Team &amp; Club results tracking for endurance sports and more. Rails, SQLite, Hotwire.</p>
+      <p>Team &amp; club results tracking for endurance sports and more. Rails, SQLite, Hotwire. iOS app (Hotwire Native) in development.</p>
       <p><a href="https://podiumstats.com">Visit podiumstats.com &rarr;</a></p>
     </div>
   </div>
@@ -28,4 +28,4 @@ permalink: /work/
   </div>
 </section>
 
-<p class="home-section" style="color:#6B6B6B;font-size:15px;">More underway. If you want to see how these are built, <a href="{{ "/writing/" | relative_url }}">read the writing</a> &mdash; every ship gets written down.</p>
+<p class="home-section" style="color:#6B6B6B;font-size:15px;">More underway. If you want to see how these are built, <a href="{{ "/writing/" | relative_url }}">read the writing</a>.</p>
