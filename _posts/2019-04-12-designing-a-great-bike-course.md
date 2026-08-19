@@ -29,22 +29,30 @@ About 2,500 athletes will compete at the 2019 Ironman 70.3 Traverse City race. 
 
 The overall shape of the bike course for Ironman 70.3 Traverse City is a clockwise loop.  Why clockwise? Because if the course went counter-clockwise, athletes would be making more left turns, which means they would be crossing over (cutting off) a traffic lane every time they made a left turn.
 
-\[caption id="attachment\_275" align="alignnone" width="1800"\]![bike-left-turn.png](/images/bike-left-turn-2503103328-1555005815898.png) Left Turn Scenario\[/caption\]
+![bike-left-turn.png](/images/bike-left-turn-2503103328-1555005815898.png)
+
+*Left Turn Scenario*
 
 Now, left turns can't usually be totally eliminated, but we can reduce the number of them, and when they're necessary, they can be placed in lower impact (traffic) areas.
 
 Right turns are much more preferred options.
 
-\[caption id="attachment\_277" align="alignnone" width="1800"\]![bike-right-turn.png](/images/bike-right-turn-3283000458-1555005835224.png) Right Turn Scenario\[/caption\]
+![bike-right-turn.png](/images/bike-right-turn-3283000458-1555005835224.png)
+
+*Right Turn Scenario*
 
  
 
 One of the trickiest parts of designing a great course can be achieving the exact distance that is needed.  Sometimes the courses work out perfectly, like the Olympic distance course for the [Traverse City Triathlon](https://www.enduranceevolution.com/traverse-city-triathlon/), which is a perfect 40K clockwise loop course with no out-and-backs. For Ironman 70.3 Traverse City, we needed exactly 56 miles. I spent days looking over satellite maps on Google Earth, trying to find a perfect 56 mile single loop with as few left turns as possible. Eventually we realized that we would need to utilize a technique known as a "distance grab", essentially an out-an-back section to add distance to a course.
 
-\[caption id="attachment\_276" align="aligncenter" width="514"\]![InkedBike ALL overview simple 1_sketch.jpg](/images/InkedBike-ALL-overview-simple-1_sketch.jpg-703233740-1555005654133.jpg) Ironman 70.3 Traverse City bike course distance grab\[/caption\]
+![InkedBike ALL overview simple 1_sketch.jpg](/images/InkedBike-ALL-overview-simple-1_sketch.jpg-703233740-1555005654133.jpg)
+
+*Ironman 70.3 Traverse City bike course distance grab*
 
 Because the course is a clockwise loop, the distance grab needed to be on the inside of the loop.  Again, otherwise athletes would be cutting off vehicle traffic when they turn left, and additionally they'd be cutting off racer traffic turning left back onto the main course. Here's an imaginary example. You can see that cyclists would cross cyclists (yellow arrows) and cyclists would cross vehicles (green arrow).
 
-\[caption id="attachment\_278" align="aligncenter" width="348"\]![InkedBike-ALL-overview-simple-1_sketch-1.jpg-1-1.jpg](/images/InkedBike-ALL-overview-simple-1_sketch-1.jpg-1-1-643307916-1555005927745.jpg) Left turn distance grabs just don't work\[/caption\]
+![InkedBike-ALL-overview-simple-1_sketch-1.jpg-1-1.jpg](/images/InkedBike-ALL-overview-simple-1_sketch-1.jpg-1-1-643307916-1555005927745.jpg)
+
+*Left turn distance grabs just don't work*
 
 These are just a few features that race directors and planning committees think about when laying out a bike course (or run course). On top of these ideas, there are practical considerations like how will vehicle traffic be impacted and how that impact can be minimized. There are always going to be inconveniences to the regular flow of life when a race happens, but as race organizers we try our best to minimize inconveniences while creating a safe, challenging, and fun experience for racers.
