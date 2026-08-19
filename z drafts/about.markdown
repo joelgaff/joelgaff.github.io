@@ -8,5 +8,5 @@ Joel Gaff, Jr. is a software developer based in Portland, Oregon & Traverse City
 
 ## Connect
 
-- Email: [joel@joelgaff.com](mailto:joelga@hey.com)
+- Email: [joel@joelgaff.com](mailto:joel@joelgaff.com)
 - GitHub: [joelgaff](https://github.com/joelgaff)
