@@ -1,149 +1,128 @@
 ---
 ---
 
+// joelgaff.com — redesign on top of Minima 2.5
+// Set Minima variables, then import, then override.
+
+$base-font-family: 'Archivo', Helvetica, Arial, sans-serif;
+$base-font-size: 17px;
+$text-color: #121212;
+$background-color: #ffffff;
+$brand-color: #16694A;
+$grey-color: #6B6B6B;
+$grey-color-light: #E4E4E4;
+$grey-color-dark: #3D3D3D;
+$content-width: 748px; // 700px column + 2*24px gutter
+$spacing-unit: 30px;
+
 @import "minima";
 
-/* Center site title on all pages */
-.site-header {
-  padding-top: 1rem;
-  border-bottom: none !important;
+// ---- global -------------------------------------------------------------
+$mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+body { -webkit-font-smoothing: antialiased; }
+
+a { color: $brand-color; text-decoration: none;
+  &:visited { color: $brand-color; }
+  &:hover { color: $text-color; text-decoration: underline; }
 }
 
-.site-header .wrapper {
-  text-align: center;
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+
+.site-header { border-top: none; border-bottom: none; min-height: auto; padding-top: 36px;
+  .wrapper { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+}
+.site-title, .site-title:visited { display: flex; align-items: center; float: none; line-height: 1;
+  .site-mark { height: 52px; width: auto; }
+}
+.site-nav { float: none; line-height: 1.2; background: none; border: none; position: static;
+  .page-link { color: $grey-color; font-size: 14px; font-weight: 500; margin-left: 20px; padding-bottom: 1px;
+    &:hover { color: $text-color; text-decoration: none; }
+    &.active { color: $text-color; border-bottom: 2px solid $brand-color; }
+  }
 }
 
-.site-title {
-  float: none !important;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none !important;
+.site-footer { border-top: 1px solid $grey-color-light; padding: 20px 0 48px;
+  font-size: 14px; color: $grey-color;
+  .wrapper { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  a, a:visited { color: $grey-color; margin-left: 16px; }
 }
 
-.site-title:hover {
-  text-decoration: none !important;
+// ---- shared pieces ------------------------------------------------------
+.kicker { margin: 0; font-family: $mono; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: $brand-color; }
+.section-label { margin: 0; font-family: $mono; font-size: 12px; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: $grey-color; }
+
+.banner { margin-top: 52px; background: $brand-color; color: #fff; padding: 22px 26px;
+  p { margin: 0; }
+  .banner-title { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; }
+  .banner-sub { margin-top: 6px; font-size: 14px; color: rgba(255,255,255,.75); }
 }
 
-.site-title-image {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.numbered-row { border-top: 1px solid $grey-color-light; padding: 22px 0; display: grid; grid-template-columns: 64px 1fr; gap: 16px;
+  &:last-child { border-bottom: 1px solid $grey-color-light; }
+  .num { font-family: $mono; font-size: 15px; color: $brand-color; }
+  h3 { margin: 0; font-size: 24px; letter-spacing: -0.02em;
+    a, a:visited { color: $text-color; } }
+  p { margin: 6px 0 0; color: $grey-color-dark; }
 }
 
-.site-title-text {
-  display: block;
+// ---- home ---------------------------------------------------------------
+.home-hero { margin-top: 84px;
+  .byline { display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+    img { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+    div { display: grid; gap: 3px; }
+    .byline-name { font-size: 20px; font-weight: 600; letter-spacing: -0.01em; line-height: 1; }
+  }
+  h1 { font-size: 58px; line-height: 1.04; letter-spacing: -0.03em; margin: 14px 0 0; }
+  .tagline { margin: 28px 0 0; font-size: 19px; line-height: 1.55; color: $grey-color-dark; max-width: 600px; }
+  .signature { margin-top: 26px; width: 90px; height: auto; }
+}
+.home-section { margin-top: 72px; }
+
+.post-list-compact { margin: 24px 0 0; list-style: none;
+  li { display: grid; grid-template-columns: 110px 1fr; gap: 16px; margin-bottom: 30px; }
+  .post-date { font-family: $mono; font-size: 13px; color: #9A9A9A; padding-top: 5px; margin: 0; }
+  h3 { margin: 0; font-size: 21px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em;
+    a, a:visited { color: $text-color; } }
+  .excerpt { margin: 6px 0 0; font-size: 16px; color: $grey-color-dark;
+    p { margin: 0; } }
 }
 
-.site-nav {
-  float: none !important;
-  text-align: center;
-  margin-top: 0.5rem;
+// ---- pages --------------------------------------------------------------
+.page-hero { margin-top: 84px;
+  h1 { font-size: 44px; letter-spacing: -0.025em; margin: 12px 0 0; }
+  .lede { margin: 18px 0 0; color: $grey-color-dark; max-width: 580px; font-size: 19px; }
 }
 
-/* Center home page content */
-.home {
-  text-align: center;
+// ---- writing archive ----------------------------------------------------
+.archive-year { margin-top: 56px;
+  h2 { margin: 0; font-family: $mono; font-size: 12px; font-weight: 400; letter-spacing: 0.16em; color: $grey-color; }
+}
+.archive-list { margin: 14px 0 0; list-style: none;
+  li { border-top: 1px solid $grey-color-light; padding: 16px 0; display: grid; grid-template-columns: 110px 1fr; gap: 16px; align-items: baseline; margin-bottom: 0; }
+  .post-date { font-family: $mono; font-size: 13px; color: #9A9A9A; margin: 0; }
+  a, a:visited { color: $text-color; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.35; }
 }
 
-/* Profile photo styling */
-.profile-photo {
-  margin: 2rem auto;
-  text-align: center;
+// ---- posts --------------------------------------------------------------
+.post-header { margin-top: 32px;
+  .post-title { font-size: 42px; font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; }
+  .post-meta { font-family: $mono; font-size: 13px; color: $grey-color;
+    .tag { color: $brand-color; } }
+}
+.post-content { max-width: 660px; font-size: 17.5px; line-height: 1.7; color: #262626;
+  h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+  code { background: #F0F0F0; border: none; border-radius: 3px; font-size: 15px; }
+  pre { background: #141414; color: #E8E8E8; border: none; border-radius: 4px; padding: 18px 22px; font-size: 14.5px; line-height: 1.6;
+    code { background: none; color: inherit; font-size: inherit; } }
+}
+.post-footer { margin-top: 56px; border-top: 1px solid $grey-color-light; padding-top: 20px;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px;
+  .tags { font-family: $mono; font-size: 13px; color: $grey-color; }
 }
 
-.profile-photo img {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Center post list */
-.home .post-list {
-  text-align: left;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Center page heading */
-.home .page-heading {
-  text-align: center;
-}
-
-/* Pagination styling */
-.pagination {
-  text-align: center;
-  margin: 3rem 0;
-  padding: 1rem 0;
-  border-top: 1px solid #e8e8e8;
-}
-
-.pagination a,
-.pagination span {
-  padding: 0.5rem 1rem;
-  margin: 0 0.25rem;
-  text-decoration: none;
-  color: #2a7ae2;
-}
-
-.pagination a:hover {
-  background: #f0f0f0;
-  border-radius: 3px;
-}
-
-.pagination .disabled {
-  color: #828282;
-}
-
-/* Center footer content */
-.footer-content {
-  text-align: center;
-}
-
-.footer-content p {
-  margin: 0.5rem 0;
-}
-
-/* Blog post layout styling */
-.post {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.post-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.post-title {
-  margin-bottom: 0.5rem;
-}
-
-.post-meta {
-  color: #828282;
-  font-size: 0.9rem;
-}
-
-.post-content {
-  text-align: left;
-  line-height: 1.6;
-}
-
-.post-tags {
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e8e8e8;
-  text-align: center;
-}
-
-.post-tags .tag {
-  background: #f0f0f0;
-  padding: 0.25rem 0.5rem;
-  border-radius: 3px;
-  font-size: 0.85rem;
+@media screen and (max-width: 800px) {
+  .home-hero h1 { font-size: 40px; }
+  .page-hero h1 { font-size: 34px; }
+  .post-header .post-title { font-size: 32px; }
 }

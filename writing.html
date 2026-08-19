@@ -1,0 +1,26 @@
+---
+layout: default
+title: Writing
+permalink: /writing/
+---
+
+<header class="page-hero">
+  <p class="kicker">Writing</p>
+  <h1>{{ site.posts | size }} posts since 2017.</h1>
+  <p class="lede">Rails, Linux, indie shipping, race directing, daily habits, and family life. Every post, newest first.</p>
+</header>
+
+{% assign by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for year in by_year %}
+<section class="archive-year">
+  <h2>{{ year.name }}</h2>
+  <ul class="archive-list">
+    {% for post in year.items %}
+    <li>
+      <p class="post-date">{{ post.date | date: "%b %-d" }}</p>
+      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

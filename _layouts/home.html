@@ -3,57 +3,55 @@ layout: default
 ---
 
 <div class="home">
-  {{ content }}
+  <header class="home-hero">
+    <div class="byline">
+      <img src="{{ "/images/profile.jpg" | relative_url }}" alt="Joel Gaff, Jr.">
+      <div>
+        <span class="byline-name">Joel Gaff, Jr.</span>
+        <span class="kicker">Portland, Oregon</span>
+      </div>
+    </div>
+    <h1>I build and run production Rails apps.</h1>
+    <p class="tagline">Rails builder for hire. Contracts or full-time. Rails&nbsp;&middot;&nbsp;SQLite&nbsp;&middot;&nbsp;Hotwire. Shipping <a href="https://podiumstats.com">podiumstats.com</a> &amp; <a href="https://cucamonga.app">cucamonga.app</a>.</p>
+    <p style="margin:20px 0 0;font-size:16px;"><a href="mailto:{{ site.email }}" style="font-weight:600;">{{ site.email }}</a></p>
+  </header>
 
-  {% if site.paginate %}
-    {% assign posts = paginator.posts %}
-  {% else %}
-    {% assign posts = site.posts %}
-  {% endif %}
+  <aside class="banner">
+    <p class="banner-title">See you at Rails World 2026 &mdash; Austin, Sept 23&ndash;24.</p>
+    <p class="banner-sub">Come say hi. I'll be the one talking about SQLite.</p>
+  </aside>
 
-  {%- if posts.size > 0 -%}
-    <h2 class="page-heading"></h2>
-    <div style="height:2em;"></div>
-    <ul class="post-list">
-      {%- for post in posts -%}
+  <section class="home-section">
+    <h2 class="section-label">Current work</h2>
+    <div class="numbered-row">
+      <span class="num">01</span>
+      <div>
+        <h3><a href="https://podiumstats.com">podiumstats.com</a></h3>
+        <p>Team &amp; Club results tracking for endurance sports and more.</p>
+      </div>
+    </div>
+    <div class="numbered-row">
+      <span class="num">02</span>
+      <div>
+        <h3><a href="https://cucamonga.app">cucamonga.app</a></h3>
+        <p>The trip organization app. Keep all your reservations, bookings, and confirmations in one place.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <h2 class="section-label">Recent writing</h2>
+    <ul class="post-list-compact">
+      {%- for post in site.posts limit: 3 -%}
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if post.excerpt -%}
-          <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        {%- endif -%}
+        <p class="post-date">{{ post.date | date: "%b %-d '%y" }}</p>
+        <div>
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+          <div class="excerpt">{{ post.excerpt | strip_html | truncatewords: 24 }}</div>
+        </div>
       </li>
       {%- endfor -%}
     </ul>
-
-    {% if site.paginate %}
-      <div class="pagination">
-        {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">
-            &laquo; Previous
-          </a>
-        {% else %}
-          <span class="previous disabled">&laquo; Previous</span>
-        {% endif %}
-
-        <span class="page_number">
-          Page: {{ paginator.page }} of {{ paginator.total_pages }}
-        </span>
-
-        {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path | relative_url }}" class="next">
-            Next &raquo;
-          </a>
-        {% else %}
-          <span class="next disabled">Next &raquo;</span>
-        {% endif %}
-      </div>
-    {% endif %}
-
-  {%- endif -%}
-
+    <p><a href="{{ "/writing/" | relative_url }}">All writing &rarr;</a></p>
+  </section>
 </div>

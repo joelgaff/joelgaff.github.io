@@ -1,7 +1,8 @@
-<footer class="site-footer h-card">
+<footer class="site-footer">
   <div class="wrapper">
-    <div class="footer-content">
-      <p><a href="{{ site.url }}">joelgaff.com</a></p>
-    </div>
+    <span>{{ site.title | escape }} &middot; Portland, OR</span>
+    <span>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a><a href="https://github.com/joelgaff">GitHub</a><a href="https://world.hey.com/joelga">HEY World</a><a href="{{ "/feed.xml" | relative_url }}">RSS</a>
+    </span>
   </div>
 </footer>
