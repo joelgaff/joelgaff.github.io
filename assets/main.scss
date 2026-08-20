@@ -120,6 +120,20 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
   code { background: #F0F0F0; border: none; border-radius: 3px; font-size: 15px; }
   pre { background: #141414; color: #E8E8E8; border: none; border-radius: 4px; padding: 18px 22px; font-size: 14.5px; line-height: 1.6;
     code { background: none; color: inherit; font-size: inherit; } }
+  // Minima's rouge styles assume a light background; force the dark block and
+  // recolor the tokens to stay legible on #141414.
+  .highlighter-rouge .highlight, .highlight { background: #141414; border-radius: 4px; }
+  .highlight {
+    .c, .cm, .cp, .c1, .cs { color: #9A9A9A; }
+    .k, .kd, .kn, .kp, .kr, .kt, .o, .ow { color: #8FD4B0; }
+    .s, .s1, .s2, .sb, .sc, .sd, .sh, .si, .sx, .sr, .ss { color: #E5B567; }
+    .m, .mf, .mh, .mi, .mo, .il { color: #C792EA; }
+    .nb, .nf, .nc, .nn, .nt { color: #82AAFF; }
+    .n, .nv, .vc, .vg, .vi, .p, .w { color: #E8E8E8; }
+    .gd { color: #F97583; background: none; }
+    .gi { color: #85E89D; background: none; }
+    .err { color: #E8E8E8; background: none; }
+  }
 }
 .post-footer { margin-top: 56px; border-top: 1px solid $grey-color-light; padding-top: 20px;
   display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px;
