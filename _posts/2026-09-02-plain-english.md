@@ -23,4 +23,4 @@ Sure, I could learn btop better, but sometimes I just want a quick answer to "wh
 
 Check it out here: [https://github.com/joelgaff/omarchy-plain-english](https://github.com/joelgaff/omarchy-plain-english)
 
-P.S. - my Framework was running hot because the Bluetooth service was stuck on something and using an entire core. Claude helped me debug fix. What a time to be alive.
+P.S. - my Framework was running hot because the Bluetooth service was stuck on something and using an entire core. Claude helped me debug and fix it. What a time to be alive.
