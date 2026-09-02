@@ -15,6 +15,8 @@ So, I did what anyone using [Omarchy](https://omarchy.org) these days would do, 
 
 I call it Omarchy Plain English.
 
+![Omarchy Plain English plugin output showing a plain-language system summary](/images/plain-english-plugin.jpg)
+
 It's a plugin that reads your system stats and translates what's going on there into plain English. It doesn't use any AI. It just has prescribed verbiage for different scenarios. It lives in your top bar and you can click it and see, in plain English, what's happening in your system. If anything is going wonky, it'll tell you. If everything is cool, it'll tell you. That's simple.
 
 Sure, I could learn btop better, but sometimes I just want a quick answer to "why is my laptop running hot?" The laptop has all the data, and now it can easily tell me why.
