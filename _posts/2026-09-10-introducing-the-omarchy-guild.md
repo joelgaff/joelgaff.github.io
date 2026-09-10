@@ -14,6 +14,8 @@ Recently I launched a website called omarchyguild.com as a place for all contrib
 
 I've built it so that a user simply has to authorize omarchyguild.com to access their GitHub account. From there it can see what they've done related to Omarchy, and any work they've done on pull requests, themes, or plugins gets automatically pulled into their profile. Pull requests are imported and updated automatically as new work comes in while users manually add plugins and themes.
 
+![An Omarchy Guild contributor profile](/images/omarchy-guild-profile.png)
+
 ## The stack
 
 - Rails 8, SQLite + Solid Queue/Cache/Cable, Hotwire, Propshaft + import maps, Minitest.
