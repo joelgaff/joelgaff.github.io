@@ -2,12 +2,13 @@
 layout: default
 title: Now
 permalink: /now/
+last_modified_at: 2026-08-19
 ---
 
 <header class="page-hero">
   <p class="kicker">/now</p>
   <h1>What I'm doing now.</h1>
-  <p class="post-meta" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13px;color:#6B6B6B;margin-top:16px;">Updated {{ page.last_modified_at | default: site.time | date: "%b %-d, %Y" }} &middot; Portland, OR &middot; <a href="https://nownownow.com/about">a now page</a></p>
+  <p class="post-meta" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13px;color:#6B6B6B;margin-top:16px;">{% if page.last_modified_at %}Updated {{ page.last_modified_at | date: "%b %-d, %Y" }} &middot; {% endif %}Portland, OR &middot; <a href="https://nownownow.com/about">a now page</a></p>
 </header>
 
 <section class="post-content" style="margin-top:56px;">
