@@ -12,8 +12,8 @@ permalink: /about/
 <section style="margin-top:44px;display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:start;">
   <img src="{{ "/images/profile.jpg" | relative_url }}" alt="Joel Gaff, Jr." style="width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 4px 6px rgba(0,0,0,.1);">
   <div class="post-content">
-    <p>I'm Joel Gaff, Jr., a self-taught Ruby on Rails developer in Portland, Oregon, USA. For the past four-plus years I've designed, built, and operated nearly a dozen production Rails apps. Solo. Every migration, every DNS record, every deploy.</p>
-    <p>I borrow a lot from the 37signals playbook: fixed time and variable scope, one boring monolith instead of a bunch of services, Hotwire instead of a heavy front end. I use SQLite whenever I can, and I write about what I'm working on.</p>
+    <p>I'm Joel Gaff, Jr., a self-taught Ruby on Rails developer in Portland, Oregon, USA. For the past four-plus years I've designed, built, and operated nearly a dozen production Rails apps. Solo. I manage every migration, the DNS records, and deploys.</p>
+    <p>I borrow a lot from 37signals: a single, maintainable, Rails monolith, Hotwire for the front end, and almost always SQLite. I like to write about what I'm working on, too.</p>
   </div>
 </section>
 
