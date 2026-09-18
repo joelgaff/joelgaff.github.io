@@ -43,6 +43,6 @@ permalink: /about/
 </section>
 
 <section class="home-section">
-  <p style="font-size:18px;">Currently shipping <a href="https://omarchyguild.com">omarchyguild.com</a>, <a href="https://podiumstats.com">podiumstats.com</a>, and <a href="https://cucamonga.app">cucamonga.app</a>, and looking for the next thing to build.</p>
+  <p style="font-size:18px;">Currently shipping <a href="https://railsguild.com">railsguild.com</a>, <a href="https://omarchyguild.com">omarchyguild.com</a>, <a href="https://podiumstats.com">podiumstats.com</a>, and <a href="https://cucamonga.app">cucamonga.app</a>, and looking for the next thing to build.</p>
   <p style="margin-top:20px;"><a href="{{ "/hire/" | relative_url }}" style="font-weight:600;font-size:17px;">Hire me &rarr;</a></p>
 </section>

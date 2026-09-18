@@ -20,29 +20,36 @@ permalink: /hire/
   <div class="numbered-row">
     <span class="num">01</span>
     <div>
+      <h3 style="font-size:20px;">A developer showcase built on proof, not claims</h3>
+      <p><a href="https://railsguild.com">railsguild.com</a>: Rails developers add the apps they've shipped and earn a verification badge for each one, so employers browsing the directory see real production experience instead of a resume.</p>
+    </div>
+  </div>
+  <div class="numbered-row">
+    <span class="num">02</span>
+    <div>
       <h3 style="font-size:20px;">A community platform that syncs itself</h3>
       <p><a href="https://omarchyguild.com">omarchyguild.com</a>: members authorize GitHub once and their Omarchy pull requests import and stay current on their own. Rails 8, SQLite with Solid Queue, magic-link auth, plus a contributor leaderboard and a globe.</p>
     </div>
   </div>
   <div class="numbered-row">
-    <span class="num">02</span>
+    <span class="num">03</span>
     <div>
       <h3 style="font-size:20px;">A rebrand shipped from a phone</h3>
       <p>Moved a production app to a new domain (DNS, certs, host allowlist) in one commit, about 15 minutes, from bed in London. Written up on the blog.</p>
     </div>
   </div>
   <div class="numbered-row">
-    <span class="num">03</span>
+    <span class="num">04</span>
     <div>
       <h3 style="font-size:20px;">Operator notifications in ~60 lines</h3>
       <p>Telegram pings for every cucamonga.app signup. About sixty lines of code, plus tests.</p>
     </div>
   </div>
   <div class="numbered-row">
-    <span class="num">04</span>
+    <span class="num">05</span>
     <div>
-      <h3 style="font-size:20px;">Three products, run end to end</h3>
-      <p>podiumstats.com, cucamonga.app, and omarchyguild.com: Rails, SQLite, Hotwire, auto-deploy on push via <a href="https://hatchbox.io">Hatchbox</a>. Boring in the best way.</p>
+      <h3 style="font-size:20px;">Four products, run end to end</h3>
+      <p>podiumstats.com, cucamonga.app, omarchyguild.com, and railsguild.com: Rails, SQLite, Hotwire, auto-deploy on push via <a href="https://hatchbox.io">Hatchbox</a>. Boring in the best way.</p>
     </div>
   </div>
 </section>
