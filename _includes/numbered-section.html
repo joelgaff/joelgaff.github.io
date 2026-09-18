@@ -1,0 +1,53 @@
+{%- comment -%}
+THE numbered list. Every "01 / heading / body" section on the site renders here,
+so the markup, the numbering and the ordering exist in exactly one place.
+
+  items     required  a _data collection
+  label     optional  section <h2>
+  small     optional  smaller headings (/hire, /about)
+
+How each item's heading and body are built:
+  field         body text field on the item              (default "body")
+  heading_field heading text field on the item           (default "title")
+  link          heading is a link to item.url, text item.name
+  external      links get target/rel
+  visit         append a "Visit <name> →" footer link
+  learn_more    body becomes a "Learn more →" link to /work/#<slug> (homepage)
+  anchor        give each row an id of <slug>, so /work/#<slug> lands on it
+{%- endcomment -%}
+{%- assign field = include.field | default: "body" -%}
+{%- assign heading_field = include.heading_field | default: "title" -%}
+<section class="home-section">
+  {%- if include.label %}<h2 class="section-label">{{ include.label }}</h2>{% endif -%}
+  {%- for item in include.items -%}
+
+    {%- comment -%} heading {%- endcomment -%}
+    {%- if include.link -%}
+      {%- capture heading %}<a href="{{ item.url }}"{% if include.external %} target="_blank" rel="noopener"{% endif %}>{{ item.name }}</a>{% endcapture -%}
+    {%- else -%}
+      {%- assign heading = item[heading_field] -%}
+    {%- endif -%}
+
+    {%- comment -%} body {%- endcomment -%}
+    {%- if include.learn_more -%}
+      {%- capture body %}<a href="{{ "/work/" | relative_url }}#{{ item.name | slugify }}">Learn more &rarr;</a>{% endcapture -%}
+    {%- else -%}
+      {%- assign body = item[field] -%}
+    {%- endif -%}
+
+    {%- comment -%} footer {%- endcomment -%}
+    {%- assign footer = nil -%}
+    {%- if include.visit -%}
+      {%- capture footer %}<a href="{{ item.url }}">Visit {{ item.name }} &rarr;</a>{% endcapture -%}
+    {%- endif -%}
+
+    <div class="numbered-row"{% if include.anchor %} id="{{ item.name | slugify }}"{% endif %}>
+      <span class="num">{{ forloop.index | prepend: "0" | slice: -2, 2 }}</span>
+      <div>
+        {%- if heading %}<h3{% if include.small %} class="row-title"{% endif %}>{{ heading }}</h3>{% endif -%}
+        <p>{{ body }}</p>
+        {%- if footer %}<p>{{ footer }}</p>{% endif -%}
+      </div>
+    </div>
+  {%- endfor -%}
+</section>

@@ -1,14 +1,10 @@
 ---
-layout: default
 title: Writing
 permalink: /writing/
 ---
 
-<header class="page-hero">
-  <p class="kicker">Writing</p>
-  <h1>{{ site.posts | size }} posts since 2017.</h1>
-  <p class="lede">Rails, Linux, indie shipping, race directing, daily habits, and family life. Every post, newest first.</p>
-</header>
+{%- capture writing_title %}{{ site.posts | size }} posts since 2017.{% endcapture -%}
+{% include page-hero.html title=writing_title lede="Rails, Linux, indie shipping, race directing, daily habits, and family life. Every post, newest first." %}
 
 {% assign by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 {% for year in by_year %}

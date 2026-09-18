@@ -1,0 +1,11 @@
+# /about "How I work"
+- title: "Customer #1"
+  body: >-
+    Most projects start as something I want for myself, so I'm using them every
+    day before anyone else does.
+
+- title: Boring stack, on purpose
+  body: Rails, SQLite, Hotwire, one server. Fewer moving parts means more shipping.
+
+- title: Written down
+  body: I try to share what I'm working on and how I work.

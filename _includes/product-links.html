@@ -1,0 +1,13 @@
+{%- comment -%}
+Inline "a, b & c" list of every product, from _data/products.yml.
+Used by the homepage hero tagline and anywhere else the list is named in prose.
+
+  last_sep  optional  separator before the final item (default " &amp; ")
+  external  optional  truthy to add target/rel (homepage hero does, prose doesn't)
+{%- endcomment -%}
+{%- assign last_sep = include.last_sep | default: " &amp; " -%}
+{%- assign products = site.data.products -%}
+{%- for p in products -%}
+  {%- if forloop.last and forloop.length > 1 %}{{ last_sep }}{% elsif forloop.index > 1 %}, {% endif -%}
+  <a href="{{ p.url }}"{% if include.external %} target="_blank" rel="noopener"{% endif %}>{{ p.name }}</a>
+{%- endfor -%}

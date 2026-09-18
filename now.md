@@ -1,17 +1,14 @@
 ---
-layout: default
+nav: "/now"
 title: Now
 permalink: /now/
 last_modified_at: 2026-08-19
 ---
 
-<header class="page-hero">
-  <p class="kicker">/now</p>
-  <h1>What I'm doing now.</h1>
-  <p class="post-meta" style="font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:13px;color:#6B6B6B;margin-top:16px;">{% if page.last_modified_at %}Updated {{ page.last_modified_at | date: "%b %-d, %Y" }} &middot; {% endif %}Portland, OR &middot; <a href="https://nownownow.com/about">a now page</a></p>
-</header>
+{%- capture now_meta %}{% if page.last_modified_at %}Updated {{ page.last_modified_at | date: "%b %-d, %Y" }} &middot; {% endif %}Portland, OR &middot; <a href="https://nownownow.com/about">a now page</a>{% endcapture -%}
+{% include page-hero.html title="What I'm doing now." meta=now_meta %}
 
-<section class="post-content" style="margin-top:56px;">
+<section class="post-content now-body">
   <p>Getting <a href="https://podiumstats.com">podiumstats.com</a> more polished, and <a href="https://cucamonga.app">cucamonga.app</a> fleshed out. Podium Stats has become a huge help for the <a href="https://tctrackclub.com">Traverse City Track Club</a> to automatically calculate their Grand Prix series standings in real time, rather than requiring someone to manually do so every time someone adds a result to a spreadsheet. The Cucamonga app has become my go-to place to consolidate all my travel details.  Flight confirmations, hotel, car, excursion bookings - all in one place.</p>
   <p>Working on a few other smaller projects: A bookkeeping app that may replace my xero.com subscription, some tools for my race directing work with IRONMAN (a vendor management app, an incident reporting app, and an expense report submission app). All tools that make my work in that role more efficient.</p>
   <p>I'm prepping for Rails World in Austin, Sept 23&ndash;24. If you're going, email me and we'll find each other. I'm looking to add some more Rails work to my schedule, and there's no better place to start that conversation.</p>

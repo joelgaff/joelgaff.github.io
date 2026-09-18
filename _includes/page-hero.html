@@ -1,0 +1,12 @@
+{%- comment -%}
+The kicker + h1 (+ optional lede/meta) header used by every non-post page.
+  title          required
+  kicker         optional  defaults to the page's nav label / title
+  lede, meta     optional
+{%- endcomment -%}
+<header class="page-hero">
+  <p class="kicker">{{ include.kicker | default: page.nav | default: page.title }}</p>
+  <h1>{{ include.title }}</h1>
+  {%- if include.lede %}<p class="lede">{{ include.lede }}</p>{% endif -%}
+  {%- if include.meta %}<p class="page-meta">{{ include.meta }}</p>{% endif -%}
+</header>

@@ -1,0 +1,33 @@
+# Single source of truth for everything I ship.
+# Order here is the order shown everywhere. Newest/most prominent first.
+#
+# detail - the description shown on /work. The homepage lists addresses only
+#          and links here via an anchor derived from `name`.
+
+- name: railsguild.com
+  url: https://railsguild.com
+  detail: >-
+    The Rails Guild. A showcase for Ruby on Rails developers. They add the apps
+    they've shipped and verify ownership, so every profile proves the developer
+    actually built and runs what's listed. Employers browse the Guild to find
+    people with a demonstrated track record, not just a resume. The Guild itself
+    runs on Rails 8, SQLite, and Hotwire.
+
+- name: omarchyguild.com
+  url: https://omarchyguild.com
+  detail: >-
+    The Omarchy Guild. A community directory and showcase for Omarchy users and
+    contributors: GitHub-synced pull requests, a contributor leaderboard, setup
+    showcase, and a globe. Rails 8, SQLite with Solid Queue, Hotwire.
+
+- name: cucamonga.app
+  url: https://cucamonga.app
+  detail: >-
+    The trip organization app. Keep all your reservations, bookings, and
+    confirmations in one place. Rails 8, SQLite, Hotwire.
+
+- name: podiumstats.com
+  url: https://podiumstats.com
+  detail: >-
+    Team &amp; club results tracking for endurance sports and more. Rails, SQLite,
+    Hotwire. iOS app (Hotwire Native) in development.

@@ -12,8 +12,8 @@ layout: default
       </div>
     </div>
     <h1>I build and run production Rails apps.</h1>
-    <p class="tagline">Rails builder for hire. Contracts or full-time. Rails&nbsp;&middot;&nbsp;SQLite&nbsp;&middot;&nbsp;Hotwire. Shipping <a href="https://railsguild.com" target="_blank" rel="noopener">railsguild.com</a>, <a href="https://omarchyguild.com" target="_blank" rel="noopener">omarchyguild.com</a>, <a href="https://podiumstats.com" target="_blank" rel="noopener">podiumstats.com</a> &amp; <a href="https://cucamonga.app" target="_blank" rel="noopener">cucamonga.app</a>.</p>
-    <p style="margin:20px 0 0;font-size:16px;"><a href="mailto:{{ site.email }}" style="font-weight:600;">{{ site.email }}</a></p>
+    <p class="tagline">Rails builder for hire. Contracts or full-time. Rails&nbsp;&middot;&nbsp;SQLite&nbsp;&middot;&nbsp;Hotwire. Shipping {% include product-links.html external=true %}.</p>
+    <p class="hero-email"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
   </header>
 
   <aside class="banner">
@@ -21,37 +21,7 @@ layout: default
     <p class="banner-sub">If you're going, <a href="https://x.com/joelga" target="_blank" rel="noopener">ping me on X</a> and we'll find each other.</p>
   </aside>
 
-  <section class="home-section">
-    <h2 class="section-label">Current work</h2>
-    <div class="numbered-row">
-      <span class="num">01</span>
-      <div>
-        <h3><a href="https://railsguild.com" target="_blank" rel="noopener">railsguild.com</a></h3>
-        <p>The Rails Guild. Rails developers showcase their shipped work, verified. Employers find people who've proven they can ship.</p>
-      </div>
-    </div>
-    <div class="numbered-row">
-      <span class="num">02</span>
-      <div>
-        <h3><a href="https://omarchyguild.com" target="_blank" rel="noopener">omarchyguild.com</a></h3>
-        <p>The Omarchy Guild. A community for Omarchy users &mdash; a member directory, setup showcase, and leaderboard for contributors.</p>
-      </div>
-    </div>
-    <div class="numbered-row">
-      <span class="num">03</span>
-      <div>
-        <h3><a href="https://cucamonga.app" target="_blank" rel="noopener">cucamonga.app</a></h3>
-        <p>The trip organization app. Keep all your reservations, bookings, and confirmations in one place.</p>
-      </div>
-    </div>
-    <div class="numbered-row">
-      <span class="num">04</span>
-      <div>
-        <h3><a href="https://podiumstats.com" target="_blank" rel="noopener">podiumstats.com</a></h3>
-        <p>Team &amp; Club results tracking for endurance sports and more.</p>
-      </div>
-    </div>
-  </section>
+  {% include numbered-section.html label="Current work" items=site.data.products link=true external=true learn_more=true %}
 
   <section class="home-section">
     <h2 class="section-label">Recent writing</h2>

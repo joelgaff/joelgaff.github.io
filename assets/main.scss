@@ -140,6 +140,45 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
   .tags { font-family: $mono; font-size: 13px; color: $grey-color; }
 }
 
+/* ---- classes replacing former inline styles on the nav pages ---- */
+
+$mono: ui-monospace, 'SF Mono', Menlo, monospace;
+
+.row-title { font-size: 20px; }
+
+.hero-email { margin: 20px 0 0; font-size: 16px;
+  a { font-weight: 600; }
+}
+
+.page-meta { font-family: $mono; font-size: 13px; color: #6B6B6B; margin-top: 16px; }
+
+.page-lede { margin-top: 0; }
+
+.banner-availability { margin-top: 44px;
+  .banner-title { margin-top: 8px; }
+}
+.banner-kicker { font-family: $mono; font-size: 12px; letter-spacing: .16em;
+  text-transform: uppercase; color: rgba(255, 255, 255, .7); }
+
+.about-intro { margin-top: 44px; display: grid; grid-template-columns: 120px 1fr;
+  gap: 28px; align-items: start; }
+.avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .1); }
+
+.note { color: #6B6B6B; font-size: 15px; }
+
+.closing { font-size: 18px; }
+.closing-cta { margin-top: 20px;
+  a { font-weight: 600; font-size: 17px; }
+}
+
+.reach-lede { margin: 18px 0 0; font-size: 18px; }
+.reach-cta { margin-top: 24px;
+  .note { margin-left: 12px; }
+}
+.btn { background: #16694A; color: #fff; padding: 13px 24px; font-weight: 600;
+  display: inline-block; }
+
 @media screen and (max-width: 800px) {
   .home-hero h1 { font-size: 40px; }
   .home-hero .byline img { width: 112px; height: 112px; }
@@ -159,4 +198,12 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
   }
   .page-hero h1 { font-size: 34px; }
   .post-header .post-title { font-size: 32px; }
+}
+
+.now-body { margin-top: 56px; }
+
+.post-signoff { width: 60px; height: auto; margin-top: 12px; }
+
+.error-page { margin: 10px auto; max-width: 600px; text-align: center;
+  h1 { margin: 30px 0; font-size: 4em; line-height: 1; letter-spacing: -1px; }
 }

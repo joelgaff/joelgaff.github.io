@@ -39,6 +39,7 @@ defaults:
       path: ""
     values:
       image: /images/joel-og.jpg
+      layout: "default"   # pages no longer declare their own layout
   - scope:
       path: ""
       type: "posts"
