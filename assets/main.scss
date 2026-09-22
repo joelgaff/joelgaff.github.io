@@ -150,6 +150,10 @@ $mono: ui-monospace, 'SF Mono', Menlo, monospace;
   a { font-weight: 600; }
 }
 
+.rails-guild-badge { margin: 20px 0 0; line-height: 0;
+  img { height: 28px; width: auto; }
+}
+
 .page-meta { font-family: $mono; font-size: 13px; color: #6B6B6B; margin-top: 16px; }
 
 .page-lede { margin-top: 0; }
