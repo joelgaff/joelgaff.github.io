@@ -1,0 +1,53 @@
+# Refresh _data/opensource.yml from GitHub once a week and commit any changes.
+#
+# Note: a push made with GITHUB_TOKEN does NOT trigger other workflows (GitHub's
+# recursion guard), so this dispatches the Pages deploy itself after committing.
+name: Sync open source data
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Mondays 13:00 UTC (6am Portland)
+  workflow_dispatch:
+
+permissions:
+  contents: write # commit the refreshed data file
+  actions: write # dispatch the deploy workflow
+
+concurrency:
+  group: sync-opensource
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version-file: .ruby-version
+
+      - name: Sync from GitHub
+        run: bin/sync-opensource
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit if anything changed
+        id: commit
+        run: |
+          if git diff --quiet -- _data/opensource.yml; then
+            echo "No change to _data/opensource.yml."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Sync open source data from GitHub" -- _data/opensource.yml
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Deploy the updated site
+        if: steps.commit.outputs.changed == 'true'
+        run: gh workflow run "Deploy Jekyll site to Pages" --ref main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
