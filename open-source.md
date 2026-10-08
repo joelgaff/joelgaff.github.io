@@ -4,7 +4,9 @@ title: Open Source
 permalink: /open-source/
 ---
 
-{% include page-hero.html title="Built in the open." lede="Plugins I maintain, and the patches I've landed in other people's projects. Generated from GitHub." %}
+{% include page-hero.html title="Built in the open." lede="Apps and plugins I maintain, and the patches I've landed in other people's projects. Generated from GitHub." %}
+
+{% include numbered-section.html label="Apps" items=site.data.opensource.apps link=true external=true %}
 
 {% include numbered-section.html label="Plugins I maintain" items=site.data.opensource.plugins link=true external=true %}
 

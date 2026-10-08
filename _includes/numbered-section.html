@@ -12,6 +12,7 @@ How each item's heading and body are built:
   link          heading is a link to item.url, text item.name
   external      links get target/rel
   visit         append a "Visit <name> →" footer link
+                (an item carrying `site` gets that footer link automatically)
   learn_more    body becomes a "Learn more →" link to /work/#<slug> (homepage)
   anchor        give each row an id of <slug>, so /work/#<slug> lands on it
 {%- endcomment -%}
@@ -39,6 +40,8 @@ How each item's heading and body are built:
     {%- assign footer = nil -%}
     {%- if include.visit -%}
       {%- capture footer %}<a href="{{ item.url }}">Visit {{ item.name }} &rarr;</a>{% endcapture -%}
+    {%- elsif item.site -%}
+      {%- capture footer %}<a href="{{ item.site }}" target="_blank" rel="noopener">Visit {{ item.site_label }} &rarr;</a>{% endcapture -%}
     {%- endif -%}
 
     <div class="numbered-row"{% if include.anchor %} id="{{ item.name | slugify }}"{% endif %}>
