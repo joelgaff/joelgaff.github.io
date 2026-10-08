@@ -13,7 +13,7 @@ An idea for this app has always been in the back of my mind, but before AI-assis
 
 ![The dashboard in Partita Doppia](/images/partita-doppia-dashboard.png)
 
-The nudge that actually got me going came from Wes Grimes ([@Frontiersman](https://x.com/ncfrontiersman)). He mentioned, tongue in cheek, making something called OmaBudget for Omarchy. I bit, and said "Yes, I need this for Rails!"
+The nudge that actually got me going came from Wes Grimes ([@ncfrontiersman](https://x.com/ncfrontiersman)). He mentioned, tongue in cheek, making something called OmaBudget for Omarchy. I bit, and said "Yes, I need this for Rails!"
 
 I've used xero.com as my small business accounting software for the last eight or nine years. One of the nice things about Xero is that they have a great CLI and API. So I knew that if I wanted to transfer all of my data from Xero over to my new application, it would be relatively easy. And that was the case.
 
