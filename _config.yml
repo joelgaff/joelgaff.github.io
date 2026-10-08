@@ -13,6 +13,15 @@ twitter:
   card: summary
 tagline: Joel Gaff, Jr. is a Rails builder for hire. Contracts or full-time. Rails · SQLite · Hotwire. Shipping <a href="https://railsguild.com" target="_blank">railsguild.com</a>, <a href="https://omarchyguild.com" target="_blank">omarchyguild.com</a>, <a href="https://podiumstats.com" target="_blank">podiumstats.com</a> &amp; <a href="https://cucamonga.app" target="_blank">cucamonga.app</a>. Portland, OR.
 
+# The podcast I co-host. Referenced by the homepage banner and the about page,
+# so the link lives here rather than in two templates.
+podcast:
+  name: The Pingback Podcast
+  tagline: Ruby, tech &amp; more
+  url: https://open.spotify.com/show/0M7PYgsCtumUzsEKSgYfny
+  cohost: Greg Molnar
+  cohost_url: https://greg.molnar.io/   # molnar.io 301s here
+
 # Build settings
 theme: minima
 exclude:

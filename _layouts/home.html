@@ -17,6 +17,11 @@ layout: default
     <p class="rails-guild-badge"><a href="https://railsguild.com/developers/joel-gaff"><img src="https://railsguild.com/developers/joel-gaff/badge.svg" alt="Joel Gaff, Jr. is Rails Guild member #0"></a></p>
   </header>
 
+  <aside class="banner">
+    <p class="banner-title">New podcast: {{ site.podcast.name }} &mdash; {{ site.podcast.tagline }}, co-hosted with <a href="{{ site.podcast.cohost_url }}" target="_blank" rel="noopener">{{ site.podcast.cohost }}</a>.</p>
+    <p class="banner-sub"><a href="{{ site.podcast.url }}" target="_blank" rel="noopener">Listen on Spotify &rarr;</a></p>
+  </aside>
+
   {% include numbered-section.html label="Current work" items=site.data.products link=true external=true learn_more=true %}
 
   <section class="home-section">
