@@ -23,12 +23,16 @@ plugins:
   body: 'Your Omarchy system statistics as plain English sentences: what each program
     is doing, whether that is normal, and what is actually worth acting on. Python.'
 merged:
+- name: Re-read the snapshot list when the restore browser opens
+  url: https://github.com/jankeesvw/omarchy-time-machine/pull/11
+  body: 'jankeesvw/omarchy-time-machine &middot; 124 stars &middot; #11 &middot; October
+    2026'
 - name: 'Graph: scrub label above the curve, and hover shows the level at any time'
   url: https://github.com/sonderbydk/omacaffeine/pull/1
   body: 'sonderbydk/omacaffeine &middot; 5 stars &middot; #1 &middot; September 2026'
 - name: Add more Mac models to SPI keyboard support
   url: https://github.com/omacom/omarchy/pull/1957
-  body: 'omacom/omarchy &middot; 44.3k stars &middot; #1957 &middot; September 2025'
+  body: 'omacom/omarchy &middot; 44.7k stars &middot; #1957 &middot; September 2025'
 - name: 'Macbook: enable internal keyboard at LUKS'
   url: https://github.com/omacom/omarchy/pull/1313
-  body: 'omacom/omarchy &middot; 44.3k stars &middot; #1313 &middot; September 2025'
+  body: 'omacom/omarchy &middot; 44.7k stars &middot; #1313 &middot; September 2025'
