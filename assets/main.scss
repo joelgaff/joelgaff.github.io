@@ -180,8 +180,14 @@ $mono: ui-monospace, 'SF Mono', Menlo, monospace;
 .reach-cta { margin-top: 24px;
   .note { margin-left: 12px; }
 }
-.btn { background: #16694A; color: #fff; padding: 13px 24px; font-weight: 600;
-  display: inline-block; }
+.btn { background: $brand-color; padding: 13px 24px; font-weight: 600;
+  display: inline-block;
+  // The base `a:visited`/`a:hover` rules are (0,1,1) and outrank a bare `.btn`
+  // (0,1,0), so every state has to be named here or the label renders in
+  // $brand-color on $brand-color and disappears.
+  &, &:visited, &:hover, &:focus { color: #fff; text-decoration: none; }
+  &:hover, &:focus { background: darken($brand-color, 7%); }
+}
 
 @media screen and (max-width: 800px) {
   .home-hero h1 { font-size: 40px; }
