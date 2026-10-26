@@ -12,6 +12,9 @@ apps:
   site: https://partitadoppia.app
   site_label: partitadoppia.app
 plugins:
+- name: omarchy-shurectl
+  url: https://github.com/joelgaff/omarchy-shurectl
+  body: 'Omarchy bar plugin: every Shure MV7+ setting via shurectl. QML.'
 - name: omarchy-voicenotes
   url: https://github.com/joelgaff/omarchy-voicenotes
   body: Your latest Voicenotes recordings in the Omarchy bar. QML.
@@ -25,14 +28,14 @@ plugins:
 merged:
 - name: Re-read the snapshot list when the restore browser opens
   url: https://github.com/jankeesvw/omarchy-time-machine/pull/11
-  body: 'jankeesvw/omarchy-time-machine &middot; 137 stars &middot; #11 &middot; October
+  body: 'jankeesvw/omarchy-time-machine &middot; 145 stars &middot; #11 &middot; October
     2026'
 - name: 'Graph: scrub label above the curve, and hover shows the level at any time'
   url: https://github.com/sonderbydk/omacaffeine/pull/1
   body: 'sonderbydk/omacaffeine &middot; 5 stars &middot; #1 &middot; September 2026'
 - name: Add more Mac models to SPI keyboard support
   url: https://github.com/omacom/omarchy/pull/1957
-  body: 'omacom/omarchy &middot; 45.2k stars &middot; #1957 &middot; September 2025'
+  body: 'omacom/omarchy &middot; 45.7k stars &middot; #1957 &middot; September 2025'
 - name: 'Macbook: enable internal keyboard at LUKS'
   url: https://github.com/omacom/omarchy/pull/1313
-  body: 'omacom/omarchy &middot; 45.2k stars &middot; #1313 &middot; September 2025'
+  body: 'omacom/omarchy &middot; 45.7k stars &middot; #1313 &middot; September 2025'
