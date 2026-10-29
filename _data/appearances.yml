@@ -1,0 +1,10 @@
+# Podcasts and shows I've been a guest on. Rendered on /about.
+# Newest first.
+#
+# name - the episode title (the heading, linked to url)
+# url  - the episode itself
+# body - the show, episode number and date
+
+- name: "AI Coding: Are We Shipping Faster and Learning Less?"
+  url: https://www.youtube.com/watch?v=gb3AXT06fzI
+  body: Omarchy Stories, episode 009. October 28, 2026.

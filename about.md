@@ -15,6 +15,8 @@ permalink: /about/
   </div>
 </section>
 
+{% include numbered-section.html label="Podcast appearances" items=site.data.appearances link=true external=true small=true %}
+
 {% include numbered-section.html label="How I work" items=site.data.principles small=true %}
 
 <section class="home-section">
