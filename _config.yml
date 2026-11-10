@@ -23,6 +23,9 @@ podcast:
   cohost_url: https://greg.molnar.io/   # molnar.io 301s here
 
 # Build settings
+# Tree background option: canopy-band, misty-ridge, forest-footer, header-mist, or blank for none
+tree_bg: canopy-band
+
 theme: minima
 exclude:
   - "z drafts"
