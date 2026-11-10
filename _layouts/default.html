@@ -4,6 +4,7 @@
   {%- include head.html -%}
 
   <body>
+    {%- if site.tree_bg -%}<div class="tree-bg tree-bg--{{ site.tree_bg }}" aria-hidden="true"></div>{%- endif -%}
 
     {%- include header.html -%}
 

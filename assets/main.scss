@@ -236,3 +236,24 @@ $mono: ui-monospace, 'SF Mono', Menlo, monospace;
   }
 }
 .newsletter-archive { font-size: 15px; color: $grey-color; margin-top: 20px; }
+
+// ---- tree background (pick one variant via tree_bg in _config.yml) ------
+.tree-bg { position: absolute; left: 0; right: 0; z-index: -1; pointer-events: none;
+  background-repeat: repeat-x; background-size: auto 100%; }
+body { position: relative; isolation: isolate; }
+// A: misty pine ridge pinned to the bottom of the window
+.tree-bg--misty-ridge { position: fixed; bottom: 0; height: 240px; opacity: .22;
+  background-image: url("/images/trees/misty-ridge.svg"); background-position: center bottom; }
+// B: forest band behind the header that fades into the page
+.tree-bg--canopy-band { top: 0; height: 340px; opacity: .2;
+  background-image: url("/images/trees/canopy-band.svg"); background-position: center top;
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  mask-image: linear-gradient(to bottom, #000 40%, transparent); }
+// C: rolling hills and sparse pines sitting on the footer
+.tree-bg--rolling-hills { bottom: 0; height: 300px; opacity: .3;
+  background-image: url("/images/trees/rolling-hills.svg"); background-position: center bottom; }
+@media (max-width: 600px) {
+  .tree-bg--misty-ridge { height: 150px; }
+  .tree-bg--canopy-band { height: 220px; }
+  .tree-bg--rolling-hills { height: 200px; }
+}
