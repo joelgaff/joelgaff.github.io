@@ -3,8 +3,8 @@
 
   {%- include head.html -%}
 
-  <body>
-    {%- if site.tree_bg -%}<div class="tree-bg tree-bg--{{ site.tree_bg }}" aria-hidden="true"></div>{%- endif -%}
+  <body{% if site.tree_bg %} class="trees-{{ site.tree_bg }}"{% endif %}>
+    <script>(function(){var t=new URLSearchParams(location.search).get("trees");if(t!==null){document.body.className=document.body.className.replace(/\btrees-\S+/g,"").trim();if(/^[a-z-]+$/.test(t))document.body.classList.add("trees-"+t);}})();</script>
 
     {%- include header.html -%}
 

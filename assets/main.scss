@@ -237,23 +237,35 @@ $mono: ui-monospace, 'SF Mono', Menlo, monospace;
 }
 .newsletter-archive { font-size: 15px; color: $grey-color; margin-top: 20px; }
 
-// ---- tree background (pick one variant via tree_bg in _config.yml) ------
-.tree-bg { position: absolute; left: 0; right: 0; z-index: -1; pointer-events: none;
-  background-repeat: repeat-x; background-size: auto 100%; }
-body { position: relative; isolation: isolate; }
-// A: misty pine ridge pinned to the bottom of the window
-.tree-bg--misty-ridge { position: fixed; bottom: 0; height: 240px; opacity: .22;
-  background-image: url("/images/trees/misty-ridge.svg"); background-position: center bottom; }
-// B: forest band behind the header that fades into the page
-.tree-bg--canopy-band { top: 0; height: 340px; opacity: .2;
-  background-image: url("/images/trees/canopy-band.svg"); background-position: center top;
-  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
-  mask-image: linear-gradient(to bottom, #000 40%, transparent); }
-// C: rolling hills and sparse pines sitting on the footer
-.tree-bg--rolling-hills { bottom: 0; height: 300px; opacity: .3;
-  background-image: url("/images/trees/rolling-hills.svg"); background-position: center bottom; }
+// ---- tree background options ---------------------------------------------
+// Pick one with tree_bg in _config.yml (misty-ridge, forest-footer, header-mist).
+// Preview any of them with ?trees=misty-ridge etc. Leave tree_bg blank for none.
+body[class*="trees-"] { position: relative; isolation: isolate; }
+body[class*="trees-"]::before { content: ""; position: absolute; left: 0; right: 0; z-index: -1;
+  pointer-events: none; background-repeat: no-repeat; background-size: cover; }
+
+// 1. Misty ridge: pale layered treeline pinned to the bottom of the window
+body.trees-misty-ridge::before { position: fixed; bottom: 0; height: clamp(130px, 30vh, 300px);
+  opacity: .8; background-image: url("/images/trees/misty-ridge.svg"); background-position: center bottom; }
+
+// 2. Forest footer: layered forest rising out of a brand-green footer
+body.trees-forest-footer::before { display: none; }
+body.trees-forest-footer .page-content { padding-bottom: 200px; }
+body.trees-forest-footer .site-footer { position: relative; border-top: 0; background: $brand-color; color: #d9ebe2;
+  a, a:visited, span { color: #d9ebe2; }
+  &::before { content: ""; position: absolute; left: 0; right: 0; bottom: calc(100% - 1px); height: 220px;
+    pointer-events: none; background: url("/images/trees/forest-footer.svg") center bottom / cover no-repeat; }
+}
+
+// 3. Header mist: faint forest framing the top of the page, fading into the content
+body.trees-header-mist::before { top: 0; height: 380px; opacity: .75;
+  background-image: url("/images/trees/header-mist.svg"); background-position: center bottom;
+  -webkit-mask-image: linear-gradient(to bottom, #000 45%, transparent);
+  mask-image: linear-gradient(to bottom, #000 45%, transparent); }
+
 @media (max-width: 600px) {
-  .tree-bg--misty-ridge { height: 150px; }
-  .tree-bg--canopy-band { height: 220px; }
-  .tree-bg--rolling-hills { height: 200px; }
+  body.trees-misty-ridge::before { height: 120px; }
+  body.trees-forest-footer .page-content { padding-bottom: 120px; }
+  body.trees-forest-footer .site-footer::before { height: 130px; }
+  body.trees-header-mist::before { height: 240px; }
 }
