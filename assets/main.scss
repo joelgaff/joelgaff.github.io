@@ -158,6 +158,8 @@ $mono: ui-monospace, 'SF Mono', Menlo, monospace;
 
 .page-lede { margin-top: 0; }
 
+.banner + .banner { margin-top: 16px; }
+
 .banner-availability { margin-top: 44px;
   .banner-title { margin-top: 8px; }
 }
