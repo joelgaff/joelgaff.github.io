@@ -238,11 +238,18 @@ $mono: ui-monospace, 'SF Mono', Menlo, monospace;
 .newsletter-archive { font-size: 15px; color: $grey-color; margin-top: 20px; }
 
 // ---- tree background options ---------------------------------------------
-// Pick one with tree_bg in _config.yml (misty-ridge, forest-footer, header-mist).
+// Pick one with tree_bg in _config.yml (canopy-band, misty-ridge, forest-footer, header-mist).
 // Preview any of them with ?trees=misty-ridge etc. Leave tree_bg blank for none.
 body[class*="trees-"] { position: relative; isolation: isolate; }
 body[class*="trees-"]::before { content: ""; position: absolute; left: 0; right: 0; z-index: -1;
   pointer-events: none; background-repeat: no-repeat; background-size: cover; }
+
+// 0. Canopy band: wide pines behind the header that fade into the page
+body.trees-canopy-band::before { top: 0; height: 340px; opacity: .2;
+  background-image: url("/images/trees/canopy-band.svg"); background-position: center top;
+  background-repeat: repeat-x; background-size: auto 100%;
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  mask-image: linear-gradient(to bottom, #000 40%, transparent); }
 
 // 1. Misty ridge: pale layered treeline pinned to the bottom of the window
 body.trees-misty-ridge::before { position: fixed; bottom: 0; height: clamp(130px, 30vh, 300px);
@@ -264,6 +271,7 @@ body.trees-header-mist::before { top: 0; height: 380px; opacity: .75;
   mask-image: linear-gradient(to bottom, #000 45%, transparent); }
 
 @media (max-width: 600px) {
+  body.trees-canopy-band::before { height: 220px; }
   body.trees-misty-ridge::before { height: 120px; }
   body.trees-forest-footer .page-content { padding-bottom: 120px; }
   body.trees-forest-footer .site-footer::before { height: 130px; }
